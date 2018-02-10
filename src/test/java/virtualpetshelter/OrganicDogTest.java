@@ -50,20 +50,11 @@ public class OrganicDogTest {
 	}
 
 	@Test
-	public void shouldReduceWasteBy30() {
+	public void soilShouldReduceWasteBy30() {
 		int preWaste = underTest.getWaste();
-		underTest.waste();
+		underTest.soil();
 		int postWaste = underTest.getWaste();
 		assertThat(preWaste - postWaste, is(30));
-
-	}
-
-	@Test
-	public void shouldReduceSoilBy30() {
-		int preSoil = underTest.getSoil();
-		underTest.soil();
-		int postSoil = underTest.getSoil();
-		assertThat(preSoil - postSoil, is(30));
 
 	}
 
@@ -84,12 +75,18 @@ public class OrganicDogTest {
 	}
 
 	@Test
-	public void shouldIncreaseCleanlinessby30() {
+	public void cleanCageShouldIncreaseCleanlinessby30() {
 		int preCleanliness = underTest.getCleanliness();
-		underTest.cleanliness();
+		underTest.cleanCage();
 		int postCleanliness = underTest.getCleanliness();
 		assertThat(preCleanliness - postCleanliness, is(30));
-
 	}
 
+	@Test
+	public void soilShouldReduceCleanlinessBy30() {
+		int preSoil = underTest.getCleanliness();
+		underTest.soil();
+		int postSoil = underTest.getCleanliness();
+		assertThat(preSoil - postSoil, is(30));
+	}
 }

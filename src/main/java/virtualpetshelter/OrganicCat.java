@@ -7,4 +7,8 @@ public class OrganicCat extends Organic {
 		this.petDescription = petDescription;
 	}
 
+	public void soil(VirtualPetShelter testShelter) {
+		testShelter.soil();
+	}
+
 }

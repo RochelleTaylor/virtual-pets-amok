@@ -7,7 +7,6 @@ public class Organic {
 	private int water;
 	private int boredom;
 	private int waste;
-	private int soil;
 	private int happiness;
 	private int health;
 	private int cleanliness;
@@ -52,14 +51,7 @@ public class Organic {
 
 	public int getWaste() {
 		return waste;
-	}
 
-	public void waste() {
-		waste -= 30;
-	}
-
-	public int getSoil() {
-		return soil;
 	}
 
 	public int getHappiness() {
@@ -71,7 +63,8 @@ public class Organic {
 	}
 
 	public void soil() {
-		soil -= 30;
+		waste -= 30;
+		cleanliness -= 30;
 
 	}
 
@@ -93,7 +86,7 @@ public class Organic {
 		return cleanliness;
 	}
 
-	public void cleanliness() {
+	public void cleanCage() {
 		cleanliness -= 30;
 	}
 

@@ -1,5 +1,8 @@
 package virtualpetshelter;
 
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 import java.util.Collection;
 
 import org.junit.Assert;
@@ -41,10 +44,11 @@ public class VirtualPetShelterTest {
 
 	@Test
 	public void adoptAPet() {
+
 		virtualPetShelterUnderTest.adoptPetByName("third name");
 		Collection<VirtualPet> petList = virtualPetShelterUnderTest.getAllPets();
 		int shelterSize = petList.size();
-		Assert.assertEquals(3, shelterSize);
+		Assert.assertEquals(2, shelterSize);
 	}
 
 	@Test
@@ -80,6 +84,14 @@ public class VirtualPetShelterTest {
 		Assert.assertEquals(51, petPlay);
 		Assert.assertEquals(41, petThirst);
 		Assert.assertEquals(51, petHunger);
+	}
+
+	@Test
+	public void soilShouldDecreaseCleanlinessBy30() {
+		int preSoilCleanliness = virtualPetShelterUnderTest.getLitterBoxCleanliness();
+		virtualPetShelterUnderTest.soil();
+		int postSoilCleanliness = virtualPetShelterUnderTest.getLitterBoxCleanliness();
+		assertThat(preSoilCleanliness - postSoilCleanliness, is(30));
 	}
 
 }

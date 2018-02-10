@@ -8,6 +8,7 @@ public class VirtualPetShelter {
 
 	private VirtualPet pet;
 	private Map<String, VirtualPet> petList = new HashMap<String, VirtualPet>();
+	private int cleanliness;
 
 	public VirtualPetShelter() {
 		admitVirtualPetByName("Bob", " is blue ");
@@ -82,4 +83,14 @@ public class VirtualPetShelter {
 		}
 		return pets;
 	}
+
+	public int getLitterBoxCleanliness() {
+		return cleanliness;
+	}
+
+	public void soil() {
+		cleanliness -= 30;
+
+	}
+
 }

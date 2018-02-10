@@ -7,4 +7,5 @@ public class OrganicDog extends Organic {
 		this.petDescription = petDescription;
 
 	}
+
 }

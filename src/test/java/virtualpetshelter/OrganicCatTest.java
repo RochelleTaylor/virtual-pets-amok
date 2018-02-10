@@ -29,20 +29,11 @@ public class OrganicCatTest {
 	}
 
 	@Test
-	public void shouldReduceWasteBy30() {
+	public void soilShouldReduceWasteBy30() {
 		int preWaste = underTest.getWaste();
-		underTest.waste();
+		underTest.soil();
 		int postWaste = underTest.getWaste();
 		assertThat(preWaste - postWaste, is(30));
-
-	}
-
-	@Test
-	public void shouldReduceSoilBy30() {
-		int preSoil = underTest.getSoil();
-		underTest.soil();
-		int postSoil = underTest.getSoil();
-		assertThat(preSoil - postSoil, is(30));
 
 	}
 
@@ -65,7 +56,7 @@ public class OrganicCatTest {
 	@Test
 	public void shouldIncreaseCleanlinessby30() {
 		int preCleanliness = underTest.getCleanliness();
-		underTest.cleanliness();
+		underTest.cleanCage();
 		int postCleanliness = underTest.getCleanliness();
 		assertThat(preCleanliness - postCleanliness, is(30));
 
@@ -77,5 +68,14 @@ public class OrganicCatTest {
 		underTest.feed();
 		int postFeedHunger = underTest.getHunger();
 		assertThat(prefeed - postFeedHunger, is(30));
+	}
+
+	@Test
+	public void soilShouldReduceLitterBoxBy30() {
+		VirtualPetShelter testShelter = new VirtualPetShelter();
+		int preSoilCleanliness = testShelter.getLitterBoxCleanliness();
+		underTest.soil(testShelter);
+		int postSoilCleanliness = testShelter.getLitterBoxCleanliness();
+		assertThat(preSoilCleanliness - postSoilCleanliness, is(30));
 	}
 }
