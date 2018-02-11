@@ -17,7 +17,7 @@ public class VirtualPetShelterTest {
 
 	@Before
 	public void setup() {
-		virtualPetShelterUnderTest.admitVirtualPetByName(NAME, DESCRIPTION);
+		virtualPetShelterUnderTest.addVirtualPetToPetList(new OrganicDog(NAME, DESCRIPTION));
 
 	}
 
@@ -94,4 +94,12 @@ public class VirtualPetShelterTest {
 		assertThat(preSoilCleanliness - postSoilCleanliness, is(30));
 	}
 
+	@Test
+	public void emptyLitterboxShouldIncreaseCleanliness() {
+		int preEmptyCleanliness = virtualPetShelterUnderTest.getLitterBoxCleanliness();
+		virtualPetShelterUnderTest.emptyLitterBox();
+		int postLitterBoxCleanliness = virtualPetShelterUnderTest.getLitterBoxCleanliness();
+		assertThat(preEmptyCleanliness - postLitterBoxCleanliness, is(-30));
+
+	}
 }

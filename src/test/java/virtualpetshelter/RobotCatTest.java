@@ -20,4 +20,12 @@ public class RobotCatTest {
 		assertThat(preOilHealth - postOilHealth, is(30));
 
 	}
+
+	@Test
+	public void tickShouldDecreaseHealthBy1() {
+		int preTickOilHealth = underTest.getHealth();
+		int postTickOilHealth = underTest.getHealth();
+		assertThat(preTickOilHealth - postTickOilHealth, is(1));
+
+	}
 }

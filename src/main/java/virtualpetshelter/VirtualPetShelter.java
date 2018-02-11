@@ -11,7 +11,7 @@ public class VirtualPetShelter {
 	private int cleanliness;
 
 	public VirtualPetShelter() {
-		admitVirtualPetByName("Bob", " is blue ");
+		addVirtualPetToPetList(new OrganicDog("Bob", " is blue "));
 
 	}
 
@@ -19,11 +19,11 @@ public class VirtualPetShelter {
 		petList.put(newPet.getName(), newPet);
 	}
 
-	public void admitVirtualPetByName(String name, String description) {
-		pet = new VirtualPet(name, description);
-
-		addVirtualPetToPetList(pet);
-	}
+	// public void admitVirtualPetByName(String name, String description) {
+	// pet = new VirtualPet(name, description);
+	//
+	// addVirtualPetToPetList(pet);
+	// }
 
 	public VirtualPet getPetByName(String name) {
 		return petList.get(name);
@@ -90,6 +90,11 @@ public class VirtualPetShelter {
 
 	public void soil() {
 		cleanliness -= 30;
+
+	}
+
+	public void emptyLitterBox() {
+		cleanliness += 30;
 
 	}
 

@@ -89,4 +89,19 @@ public class OrganicDogTest {
 		int postSoil = underTest.getCleanliness();
 		assertThat(preSoil - postSoil, is(30));
 	}
+
+	@Test
+	public void tickShouldIncreaseHungerThirstAndBoredomBy1() {
+		int preTickHunger = underTest.getHunger();
+		int preTickThirst = underTest.getThirst();
+		int preTickBoredom = underTest.getBoredom();
+		underTest.tick();
+		int postTickHunger = underTest.getHunger();
+		int postTickThirst = underTest.getThirst();
+		int postTickBoredom = underTest.getBoredom();
+		assertThat(postTickHunger - preTickHunger, is(1));
+		assertThat(postTickThirst - preTickThirst, is(1));
+		assertThat(postTickBoredom - preTickBoredom, is(1));
+	}
+
 }

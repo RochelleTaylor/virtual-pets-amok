@@ -1,20 +1,27 @@
 package virtualpetshelter;
 
-public class VirtualPet {
+public abstract class VirtualPet {
 
-	private String name;
+	protected String name;
 	private String description;
 	private int hunger;
 	private int water;
 	private int play;
 	boolean petIsAlive = true;
+	protected String petName;
+	protected String petDescription;
+	protected int boredom;
+	private int happiness;
+	protected int health;
 
-	public VirtualPet(String name, String description) {
-		this.description = description;
-		this.name = name;
-		hunger = 50;
-		water = 40;
-		play = 50;
+	public VirtualPet() {
+
+		super();
+		// this.description = description;
+		// this.name = name;
+		// hunger = 50;
+		// water = 40;
+		// play = 50;
 	}
 
 	public String getName() {
@@ -45,16 +52,50 @@ public class VirtualPet {
 		return play;
 	}
 
-	public void tick() {
-		hunger++;
-		water++;
-		play++;
-
-	}
+	public abstract void tick();
+	// hunger++;
+	// water++;
+	// play++;
+	//
+	// }
 
 	public String getDescription() {
 
 		return description;
+	}
+
+	public String getPetName() {
+		return petName;
+	}
+
+	public String getPetDescription() {
+		return petDescription;
+	}
+
+	public int getBoredom() {
+		return boredom;
+	}
+
+	public int getHappiness() {
+		return happiness;
+	}
+
+	public void happiness() {
+		happiness -= 30;
+	}
+
+	public void boredom() {
+		boredom -= 30;
+
+	}
+
+	public int getHealth() {
+		return health;
+	}
+
+	public void health() {
+		health -= 30;
+
 	}
 
 }
