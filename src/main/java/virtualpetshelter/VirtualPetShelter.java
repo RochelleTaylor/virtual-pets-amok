@@ -16,7 +16,7 @@ public class VirtualPetShelter {
 	}
 
 	public void addVirtualPetToPetList(VirtualPet newPet) {
-		petList.put(newPet.getName(), newPet);
+		petList.put(newPet.getPetName(), newPet);
 	}
 
 	// public void admitVirtualPetByName(String name, String description) {
@@ -70,7 +70,7 @@ public class VirtualPetShelter {
 	public String displayPets() {
 		String pets = "";
 		for (VirtualPet pet : petList.values()) {
-			pets += pet.getName() + "\t|" + pet.getHunger() + "\t|" + pet.getThirst() + "\t|" + pet.getPlay() + "\n";
+			pets += pet.getPetName() + "\t|" + pet.getHunger() + "\t|" + pet.getThirst() + "\t|" + pet.getPlay() + "\n";
 		}
 		return pets;
 
@@ -79,7 +79,7 @@ public class VirtualPetShelter {
 	public String displayPetNameAndDescription() {
 		String pets = "";
 		for (VirtualPet pet : petList.values()) {
-			pets += pet.getName() + "\t|" + pet.getDescription() + "\n";
+			pets += pet.getPetName() + "\t|" + pet.getPetDescription() + "\n";
 		}
 		return pets;
 	}

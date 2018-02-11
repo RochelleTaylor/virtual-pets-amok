@@ -21,4 +21,8 @@ public class RobotCat {
 
 	}
 
+	public void tick() {
+		health -= 1;
+	}
+
 }

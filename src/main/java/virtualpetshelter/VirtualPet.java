@@ -2,8 +2,6 @@ package virtualpetshelter;
 
 public abstract class VirtualPet {
 
-	protected String name;
-	private String description;
 	private int hunger;
 	private int water;
 	private int play;
@@ -22,10 +20,6 @@ public abstract class VirtualPet {
 		// hunger = 50;
 		// water = 40;
 		// play = 50;
-	}
-
-	public String getName() {
-		return name;
 	}
 
 	public void feed() {
@@ -58,11 +52,6 @@ public abstract class VirtualPet {
 	// play++;
 	//
 	// }
-
-	public String getDescription() {
-
-		return description;
-	}
 
 	public String getPetName() {
 		return petName;

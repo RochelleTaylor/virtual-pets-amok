@@ -19,7 +19,9 @@ public class OrganicDog extends Organic implements Walkable {
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
+		hunger++;
+		thirst++;
+		boredom++;
 
 	}
 }

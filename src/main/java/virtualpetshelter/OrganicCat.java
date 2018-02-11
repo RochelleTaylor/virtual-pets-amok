@@ -19,7 +19,9 @@ public class OrganicCat extends Organic {
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
+		hunger++;
+		thirst++;
+		boredom++;
 
 	}
 

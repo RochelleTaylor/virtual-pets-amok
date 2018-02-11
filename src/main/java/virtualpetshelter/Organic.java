@@ -1,8 +1,8 @@
 package virtualpetshelter;
 
 public abstract class Organic extends VirtualPet {
-	int hunger;
-	private int water;
+	protected int hunger = 50;
+	protected int water = 40;
 	protected int waste;
 	private int cleanliness;
 	int thirst;
