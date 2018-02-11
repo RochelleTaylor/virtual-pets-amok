@@ -40,13 +40,13 @@ public class VirtualPetShelter {
 
 	public void feedAllPets() {
 		for (VirtualPet pet : petList.values()) {
-			pet.feed();
+			((Organic) pet).feed();
 		}
 	}
 
 	public void waterAllPets() {
 		for (VirtualPet pet : petList.values()) {
-			pet.water();
+			((Organic) pet).thirst();
 		}
 	}
 
@@ -70,10 +70,12 @@ public class VirtualPetShelter {
 	public String displayPets() {
 		String pets = "";
 		for (VirtualPet pet : petList.values()) {
-			pets += pet.getPetName() + "\t|" + pet.getHunger() + "\t|" + pet.getThirst() + "\t|" + pet.getPlay() + "\n";
+			if (pet instanceof Organic) {
+				pets += pet.getPetName() + "\t|" + ((Organic) pet).getHunger() + "\t|" + ((Organic) pet).getThirst()
+						+ "\t|" + pet.getPlay() + "\n";
+			}
 		}
 		return pets;
-
 	}
 
 	public String displayPetNameAndDescription() {

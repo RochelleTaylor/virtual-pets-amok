@@ -49,8 +49,8 @@ public class VirtualPetShelterApp {
 				if (myShelter.checkForPet(nameInput)) {
 					myShelter.playWithAPet(nameInput);
 					System.out.println("You played with " + nameInput);
-					// } else {
-					// System.out.println("Sorry, invalid name");
+				} else {
+					System.out.println("Sorry, invalid name");
 				}
 			}
 
@@ -69,11 +69,21 @@ public class VirtualPetShelterApp {
 				nameInput = input.nextLine();
 				System.out.println("Enter a description");
 				descriptionInput = input.nextLine();
-				myShelter.admitVirtualPetByName(nameInput, descriptionInput);
+
+				System.out.println("Would you like to adopt a Robotic or Organic pet?");
+				System.out.println("Press 1 for Organic, 2 for Robotic");
+				if (optionsEntered.equals("1")) {
+					System.out.println("Your adopting an Organic pet");
+				} else if (optionsEntered.equals("2")) {
+					System.out.println("Your adopting a Robotic pet");
+				}
+
+				myShelter.addVirtualPetToPetList(new OrganicDog("bob", "is blue"));
 				System.out.println("You've admitted a pet!");
 
 			}
 			myShelter.tickAllPets();
 		}
+		System.out.println("W");
 	}
 }

@@ -1,15 +1,12 @@
 package virtualpetshelter;
 
 public abstract class VirtualPet {
-
-	private int hunger;
-	private int water;
 	private int play;
 	boolean petIsAlive = true;
 	protected String petName;
 	protected String petDescription;
 	protected int boredom;
-	private int happiness;
+	protected int happiness;
 	protected int health;
 
 	public VirtualPet() {
@@ -22,21 +19,21 @@ public abstract class VirtualPet {
 		// play = 50;
 	}
 
-	public void feed() {
-		hunger -= 10;
-	}
+	// public void feed() {
+	// hunger -= 10;
+	// }
+	//
+	// public int getHunger() {
+	// return hunger;
+	// }
 
-	public int getHunger() {
-		return hunger;
-	}
+	// public void water() {
+	// water -= 10;
+	// }
 
-	public void water() {
-		water -= 10;
-	}
-
-	public int getThirst() {
-		return water;
-	}
+	// public int getThirst() {
+	// return water;
+	// }
 
 	public void play() {
 		play -= 20;
