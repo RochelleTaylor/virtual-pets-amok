@@ -9,21 +9,21 @@ public class VirtualPetShelter {
 	private VirtualPet pet;
 	private Map<String, VirtualPet> petList = new HashMap<String, VirtualPet>();
 	private int cleanliness;
+	private Map<String, VirtualPet> myShelter;
+	private String robotDogStatus;
 
 	public VirtualPetShelter() {
 		addVirtualPetToPetList(new OrganicDog("Bob", " is blue "));
 
 	}
 
-	public void addVirtualPetToPetList(VirtualPet newPet) {
-		petList.put(newPet.getPetName(), newPet);
+	void addVirtualPetToPetList(OrganicDog organicDog) {
+
 	}
 
-	// public void admitVirtualPetByName(String name, String description) {
-	// pet = new VirtualPet(name, description);
-	//
-	// addVirtualPetToPetList(pet);
-	// }
+	public void admitVirtualPetByName(String name, String description) {
+		addVirtualPetToPetList((OrganicDog) pet);
+	}
 
 	public VirtualPet getPetByName(String name) {
 		return petList.get(name);
@@ -97,6 +97,16 @@ public class VirtualPetShelter {
 
 	public void emptyLitterBox() {
 		cleanliness += 30;
+
+	}
+
+	public void addVirtualPetToPetList(RobotCat robotCat) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void addVirtualPetToPetList(OrganicCat organicCat) {
+		// TODO Auto-generated method stub
 
 	}
 

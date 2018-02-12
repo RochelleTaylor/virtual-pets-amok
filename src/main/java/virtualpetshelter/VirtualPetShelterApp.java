@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class VirtualPetShelterApp {
 
+	private static String userInputName;
+	private static String userInputDescription;
+	private Object pet;
+
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
@@ -14,10 +18,13 @@ public class VirtualPetShelterApp {
 		String optionsEntered = "";
 
 		System.out.println("Thank you for volunteering at Rochelles Virtual Pet Shelter!");
+		input.nextLine();
+		input.nextLine();
 
 		while (!optionsEntered.equals("6")) {
 			System.out.println("This is the status of your pets:");
-			System.out.println("Name:Hunger:Thirst:Play");
+			input.nextLine();
+			System.out.println("Name : Hunger : Thirst : Play");
 			System.out.println(myShelter.displayPets());
 			System.out.println();
 
@@ -48,9 +55,8 @@ public class VirtualPetShelterApp {
 				nameInput = input.nextLine();
 				if (myShelter.checkForPet(nameInput)) {
 					myShelter.playWithAPet(nameInput);
+
 					System.out.println("You played with " + nameInput);
-				} else {
-					System.out.println("Sorry, invalid name");
 				}
 			}
 
@@ -60,8 +66,6 @@ public class VirtualPetShelterApp {
 				if (myShelter.checkForPet(nameInput))
 					myShelter.adoptPetByName(nameInput);
 				System.out.println("You adopted a pet!");
-			} else {
-				System.out.println("Sorry, invalid name");
 			}
 
 			if (optionsEntered.equals("5")) {
@@ -69,21 +73,29 @@ public class VirtualPetShelterApp {
 				nameInput = input.nextLine();
 				System.out.println("Enter a description");
 				descriptionInput = input.nextLine();
-
-				System.out.println("Would you like to adopt a Robotic or Organic pet?");
-				System.out.println("Press 1 for Organic, 2 for Robotic");
-				if (optionsEntered.equals("1")) {
-					System.out.println("Your adopting an Organic pet");
-				} else if (optionsEntered.equals("2")) {
-					System.out.println("Your adopting a Robotic pet");
-				}
-
-				myShelter.addVirtualPetToPetList(new OrganicDog("bob", "is blue"));
 				System.out.println("You've admitted a pet!");
 
+				input.nextLine();
+				input.nextLine();
 			}
-			myShelter.tickAllPets();
+
+			System.out.println("We've added new pets to our shelter!");
+			input.nextLine();
+			System.out.println("We have included an Organic Dog, Organic Cat, Robot Dog and Robot Cat to our shelter!");
+			input.nextLine();
+			System.out.println("Here is the status of our Organic Dog");
+			myShelter.addVirtualPetToPetList(new OrganicDog(userInputName, userInputDescription));
+			input.nextLine();
+			System.out.println("Here is the Status of our Organic Cat");
+			myShelter.addVirtualPetToPetList(new OrganicCat(userInputName, userInputDescription));
+			input.nextLine();
+			System.out.println("Here is the status of our Robot Dog");
+			// System.out.println(" Name : Oil : Battery : Happiness");
+
+			System.out.println("Here is the status of our Robot Cat");
+			myShelter.addVirtualPetToPetList(new RobotCat(userInputName, userInputDescription));
 		}
-		System.out.println("W");
+		myShelter.tickAllPets();
+
 	}
 }

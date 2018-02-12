@@ -8,32 +8,37 @@ public abstract class VirtualPet {
 	protected int boredom;
 	protected int happiness;
 	protected int health;
+	private Object description;
+	private Object name;
+	private int hunger;
+	private int water;
+	private int waste;
 
 	public VirtualPet() {
 
 		super();
-		// this.description = description;
-		// this.name = name;
-		// hunger = 50;
-		// water = 40;
-		// play = 50;
+		this.description = description;
+		this.name = name;
+		hunger = 50;
+		water = 40;
+		play = 50;
 	}
 
-	// public void feed() {
-	// hunger -= 10;
-	// }
-	//
-	// public int getHunger() {
-	// return hunger;
-	// }
+	public void feed() {
+		hunger -= 10;
+	}
 
-	// public void water() {
-	// water -= 10;
-	// }
+	public int getHunger() {
+		return hunger;
+	}
 
-	// public int getThirst() {
-	// return water;
-	// }
+	public void water() {
+		water -= 10;
+	}
+
+	public int getThirst() {
+		return water;
+	}
 
 	public void play() {
 		play -= 20;
@@ -43,12 +48,8 @@ public abstract class VirtualPet {
 		return play;
 	}
 
-	public abstract void tick();
-	// hunger++;
-	// water++;
-	// play++;
-	//
-	// }
+	public void tick() {
+	}
 
 	public String getPetName() {
 		return petName;
@@ -82,6 +83,10 @@ public abstract class VirtualPet {
 	public void health() {
 		health -= 30;
 
+	}
+
+	public int getWaste() {
+		return waste;
 	}
 
 }
