@@ -1,6 +1,6 @@
 package virtualpetshelter;
 
-public class RobotCat {
+public class RobotCat extends VirtualPet {
 
 	private String petName;
 	private String petDescription;
