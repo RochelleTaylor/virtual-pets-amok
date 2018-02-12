@@ -2,9 +2,8 @@ package virtualpetshelter;
 
 public class OrganicDog extends Organic implements Walkable {
 
-	public OrganicDog(String petName, String petDescription) {
-		this.petName = petName;
-		this.petDescription = petDescription;
+	public OrganicDog(String name, String description, int boredom, int health, int waste, int thirst, int hunger) {
+		super(name, description, boredom, health, waste, thirst, hunger);
 	}
 
 	private int walk;

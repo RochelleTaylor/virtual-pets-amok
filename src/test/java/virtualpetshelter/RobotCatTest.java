@@ -10,7 +10,7 @@ public class RobotCatTest {
 	private static final String NAME = "Fido";
 	private static final String DESCRIPTION = "is pink";
 
-	RobotCat underTest = new RobotCat(NAME, DESCRIPTION);
+	Robotic underTest = new RobotCat(20, 30, "Tom", "IsPurple", 40);
 
 	@Test
 	public void shouldReturnHigherHealthAfterOilingBy30() {

@@ -1,22 +1,16 @@
 package virtualpetshelter;
 
-public class RobotDog extends VirtualPet implements Walkable {
-
-	public RobotDog(String userInputName, String userInputDescription) {
-		super();
-	}
-
-	public void RobotDog() {
-
-	}
-
-	public int getHealth() {
-		return health;
+public class RobotDog extends Robotic implements Walkable {
+	public RobotDog(String name, String description, int boredom, int health, int oil) {
+		super(boredom, health, name, description, oil);
 
 	}
 
 	public void oil() {
-		health -= 30;
+		health += 30;
+		if (health > 100) {
+			health = 100;
+		}
 
 	}
 

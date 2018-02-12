@@ -11,7 +11,7 @@ public class OrganicDogTest {
 	private static final String NAME = "Spike";
 	private static final String DESCRIPTION = " is white";
 
-	Organic underTest = new OrganicDog(NAME, DESCRIPTION);
+	Organic underTest = new OrganicDog(NAME, DESCRIPTION, 40, 100, 50, 60, 70);
 
 	@Test
 	public void shouldReturnPetName() {
@@ -27,26 +27,17 @@ public class OrganicDogTest {
 
 	@Test
 	public void feedShouldReduceHungerBy30() {
-		int prefeed = underTest.getHunger();
 		underTest.feed();
 		int postFeedHunger = underTest.getHunger();
-		assertThat(prefeed - postFeedHunger, is(30));
-	}
+		assertThat(postFeedHunger, is(0));
 
-	@Test
-	public void thirstShouldReduceWaterBy30() {
-		int preThirst = underTest.getWater();
-		underTest.thirst();
-		int postThirst = underTest.getWater();
-		assertThat(preThirst - postThirst, is(30));
 	}
 
 	@Test
 	public void playShouldReduceBoredomBy30() {
-		int prePlay = underTest.getBoredom();
-		underTest.boredom();
+		underTest.play();
 		int postPlay = underTest.getBoredom();
-		assertThat(prePlay - postPlay, is(30));
+		assertThat(postPlay, is(0));
 	}
 
 	@Test
@@ -64,14 +55,6 @@ public class OrganicDogTest {
 		underTest.health();
 		int postHealth = underTest.getHealth();
 		assertThat(preHealth - postHealth, is(30));
-	}
-
-	@Test
-	public void happinessShouldIncreaseBy30() {
-		int preHappiness = underTest.getHappiness();
-		underTest.happiness();
-		int postHappiness = underTest.getHappiness();
-		assertThat(preHappiness - postHappiness, is(30));
 	}
 
 	@Test

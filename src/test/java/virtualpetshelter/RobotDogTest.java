@@ -10,14 +10,20 @@ public class RobotDogTest {
 	private static final String DEFAULT_NAME = "Rosco";
 	private static final String DEFAULT_DESCRIPTION = "is blue";
 
-	RobotDog underTest = new RobotDog(DEFAULT_NAME, DEFAULT_DESCRIPTION);
+	RobotDog underTest = new RobotDog(DEFAULT_NAME, DEFAULT_DESCRIPTION, 30, 40, 60);
+
+	@Test
+	public void shouldReturnDefaultName() {
+		String name = underTest.getPetName();
+		assertThat(name, is(DEFAULT_NAME));
+	}
 
 	@Test
 	public void shouldReturnHigherHealthAfterOilingBy30() {
 		int preOilHealth = underTest.getHealth();
 		underTest.oil();
 		int postOilHealth = underTest.getHealth();
-		assertThat(preOilHealth - postOilHealth, is(30));
+		assertThat(postOilHealth - preOilHealth, is(30));
 
 	}
 

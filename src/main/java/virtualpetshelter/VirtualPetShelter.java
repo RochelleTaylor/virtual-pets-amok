@@ -13,7 +13,7 @@ public class VirtualPetShelter {
 	private String robotDogStatus;
 
 	public VirtualPetShelter() {
-		addVirtualPetToPetList(new OrganicDog("Bob", " is blue "));
+		addVirtualPetToPetList(new OrganicDog("Bob", " is blue ", 30, 60, 40, 20, 70));
 
 	}
 
@@ -46,7 +46,7 @@ public class VirtualPetShelter {
 
 	public void waterAllPets() {
 		for (VirtualPet pet : petList.values()) {
-			((Organic) pet).thirst();
+			((Organic) pet).water();
 		}
 	}
 
@@ -54,11 +54,6 @@ public class VirtualPetShelter {
 		for (VirtualPet pet : petList.values()) {
 			pet.tick();
 		}
-
-	}
-
-	public void playWithAPet(String name) {
-		petList.get(name).play();
 
 	}
 
@@ -72,7 +67,7 @@ public class VirtualPetShelter {
 		for (VirtualPet pet : petList.values()) {
 			if (pet instanceof Organic) {
 				pets += pet.getPetName() + "\t|" + ((Organic) pet).getHunger() + "\t|" + ((Organic) pet).getThirst()
-						+ "\t|" + pet.getPlay() + "\n";
+						+ "\t|" + "\n";
 			}
 		}
 		return pets;
@@ -97,6 +92,11 @@ public class VirtualPetShelter {
 
 	public void emptyLitterBox() {
 		cleanliness += 30;
+
+	}
+
+	public void playWithAPet(String name) {
+		getPetByName(name).play();
 
 	}
 

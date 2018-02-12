@@ -17,7 +17,7 @@ public class VirtualPetShelterTest {
 
 	@Before
 	public void setup() {
-		underTest.addVirtualPetToPetList(new OrganicDog(NAME, DESCRIPTION));
+		underTest.addVirtualPetToPetList(new OrganicDog(NAME, DESCRIPTION, 50, 60, 40, 30, 20));
 
 	}
 
@@ -55,34 +55,35 @@ public class VirtualPetShelterTest {
 		underTest.feedAllPets();
 		VirtualPet testPet = underTest.getPetByName(NAME);
 		int petHunger = ((Organic) testPet).getHunger();
-		Assert.assertThat(petHunger, is(20));
+		Assert.assertThat(petHunger, is(0));
 	}
 
-	// @Test
-	// public void waterAllPets() {
-	// underTest.waterAllPets();
-	// VirtualPet testPet = underTest.getPetByName(NAME);
-	// int petThirst = testPet.getThirst();
-	// Assert.assertEquals(-10, petThirst);
-	// }
+	@Test
+	public void waterAllPets() {
+		underTest.waterAllPets();
+		OrganicDog testPet = (OrganicDog) underTest.getPetByName(NAME);
+		int petThirst = testPet.getThirst();
+		Assert.assertEquals(0, petThirst);
+	}
 
 	@Test
-	public void playWithAllPets() {
+	public void playWithAPet() {
+		underTest.getPetByName(NAME).tick();
 		underTest.playWithAPet(NAME);
 		VirtualPet testPet = underTest.getPetByName(NAME);
-		int petPlay = testPet.getPlay();
-		Assert.assertEquals(-20, petPlay);
+		int boredom = testPet.getBoredom();
+		Assert.assertEquals(0, boredom);
 	}
 
 	@Test
 	public void tickShouldIncreasePetsHungerAndThirstBy1() {
 		underTest.tickAllPets();
-		// int petPlay = underTest.getPetByName(NAME).getPlay();
+		int petPlay = underTest.getPetByName(NAME).getBoredom();
 		int petThirst = ((Organic) underTest.getPetByName(NAME)).getThirst();
 		int petHunger = ((Organic) underTest.getPetByName(NAME)).getHunger();
-		// Assert.assertEquals(51, petPlay);
-		Assert.assertEquals(41, petThirst);
-		Assert.assertEquals(51, petHunger);
+		Assert.assertEquals(51, petPlay);
+		Assert.assertEquals(31, petThirst);
+		Assert.assertEquals(21, petHunger);
 	}
 
 	@Test

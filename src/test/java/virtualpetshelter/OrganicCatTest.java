@@ -10,22 +10,20 @@ public class OrganicCatTest {
 	private static final String NAME = "Bruno";
 	private static final String DESCRIPTION = "is Brown";
 
-	OrganicCat underTest = new OrganicCat(NAME, DESCRIPTION);
+	OrganicCat underTest = new OrganicCat(NAME, DESCRIPTION, 20, 30, 10, 40, 50);
 
 	@Test
 	public void thirstShouldReduceWaterBy30() {
-		int preThirst = underTest.getWater();
-		underTest.thirst();
-		int postThirst = underTest.getWater();
-		assertThat(preThirst - postThirst, is(30));
+		underTest.water();
+		int postThirst = underTest.getThirst();
+		assertThat(postThirst, is(0));
 	}
 
 	@Test
 	public void playShouldReduceBoredomBy30() {
-		int prePlay = underTest.getBoredom();
-		underTest.boredom();
+		underTest.play();
 		int postPlay = underTest.getBoredom();
-		assertThat(prePlay - postPlay, is(30));
+		assertThat(postPlay, is(0));
 	}
 
 	@Test
@@ -43,14 +41,7 @@ public class OrganicCatTest {
 		underTest.health();
 		int postHealth = underTest.getHealth();
 		assertThat(preHealth - postHealth, is(30));
-	}
 
-	@Test
-	public void happinessShouldIncreaseBy30() {
-		int preHappiness = underTest.getHappiness();
-		underTest.happiness();
-		int postHappiness = underTest.getHappiness();
-		assertThat(preHappiness - postHappiness, is(30));
 	}
 
 	@Test
@@ -64,10 +55,9 @@ public class OrganicCatTest {
 
 	@Test
 	public void feedShouldReduceHungerBy30() {
-		int prefeed = underTest.getHunger();
 		underTest.feed();
 		int postFeedHunger = underTest.getHunger();
-		assertThat(prefeed - postFeedHunger, is(30));
+		assertThat(postFeedHunger, is(0));
 	}
 
 	@Test

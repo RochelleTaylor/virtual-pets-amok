@@ -2,11 +2,9 @@ package virtualpetshelter;
 
 public class OrganicCat extends Organic {
 
-	private int thirst;
+	public OrganicCat(String name, String description, int boredom, int health, int waste, int thirst, int hunger) {
+		super(name, description, boredom, health, waste, thirst, hunger);
 
-	public OrganicCat(String name, String description) {
-		this.petName = petName;
-		this.petDescription = petDescription;
 	}
 
 	public void soil(VirtualPetShelter testShelter) {
