@@ -17,8 +17,8 @@ public class VirtualPetShelter {
 
 	}
 
-	void addVirtualPetToPetList(OrganicDog organicDog) {
-
+	void addVirtualPetToPetList(VirtualPet pet) {
+		petList.put(pet.getPetName(), pet);
 	}
 
 	public void admitVirtualPetByName(String name, String description) {
@@ -97,16 +97,6 @@ public class VirtualPetShelter {
 
 	public void emptyLitterBox() {
 		cleanliness += 30;
-
-	}
-
-	public void addVirtualPetToPetList(RobotCat robotCat) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void addVirtualPetToPetList(OrganicCat organicCat) {
-		// TODO Auto-generated method stub
 
 	}
 
