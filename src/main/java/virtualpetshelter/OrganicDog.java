@@ -23,4 +23,9 @@ public class OrganicDog extends Organic implements Walkable {
 		boredom++;
 
 	}
+
+	public void addPet(OrganicDog organicDog) {
+		// TODO Auto-generated method stub
+
+	}
 }

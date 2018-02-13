@@ -11,6 +11,8 @@ public class VirtualPetShelter {
 	private int cleanliness;
 	private Map<String, VirtualPet> myShelter;
 	private String robotDogStatus;
+	// public boolean getSize;
+	public boolean getAllPets;
 
 	public VirtualPetShelter() {
 		addVirtualPetToPetList(new OrganicDog("Bob", " is blue ", 30, 60, 40, 20, 70));
@@ -100,4 +102,21 @@ public class VirtualPetShelter {
 
 	}
 
+	public void addPet(OrganicDog organicDog) {
+
+	}
+
+	public int getSize() {
+		return pet.size();
+	}
+
+	public boolean petIsAlive() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	public void oilAll() {
+		// TODO Auto-generated method stub
+
+	}
 }

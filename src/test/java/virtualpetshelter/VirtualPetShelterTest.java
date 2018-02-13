@@ -6,7 +6,6 @@ import static org.junit.Assert.assertThat;
 import java.util.Collection;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class VirtualPetShelterTest {
@@ -15,7 +14,6 @@ public class VirtualPetShelterTest {
 	private static final String DESCRIPTION = "description";
 	private VirtualPetShelter underTest = new VirtualPetShelter();
 
-	@Before
 	public void setup() {
 		underTest.addVirtualPetToPetList(new OrganicDog(NAME, DESCRIPTION, 50, 60, 40, 30, 20));
 

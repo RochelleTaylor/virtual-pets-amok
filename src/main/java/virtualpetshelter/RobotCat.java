@@ -2,7 +2,7 @@ package virtualpetshelter;
 
 public class RobotCat extends Robotic {
 
-	public RobotCat(int boredom, int health, String name, String description, int oil) {
+	public RobotCat(String name, String description, int boredom, int health, int oil) {
 		super(boredom, health, name, description, oil);
 	}
 

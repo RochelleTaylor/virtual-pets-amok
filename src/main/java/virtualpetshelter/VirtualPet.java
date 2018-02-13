@@ -7,6 +7,7 @@ public abstract class VirtualPet {
 	protected String petDescription;
 	protected int boredom;
 	protected int health;
+	int size;
 
 	public VirtualPet(int boredom, int health, String name, String description) {
 		this.boredom = boredom;
@@ -44,6 +45,11 @@ public abstract class VirtualPet {
 	public void play() {
 		boredom = 0;
 
+	}
+
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

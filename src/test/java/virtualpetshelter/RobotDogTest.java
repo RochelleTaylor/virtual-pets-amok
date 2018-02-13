@@ -7,15 +7,15 @@ import org.junit.Test;
 
 public class RobotDogTest {
 
-	private static final String DEFAULT_NAME = "Rosco";
-	private static final String DEFAULT_DESCRIPTION = "is blue";
+	private static final String NAME = "Leo";
+	private static final String DESCRIPTION = "is happy";
 
-	RobotDog underTest = new RobotDog(DEFAULT_NAME, DEFAULT_DESCRIPTION, 30, 40, 60);
+	RobotDog underTest = new RobotDog(NAME, DESCRIPTION, 30, 40, 60);
 
 	@Test
 	public void shouldReturnDefaultName() {
 		String name = underTest.getPetName();
-		assertThat(name, is(DEFAULT_NAME));
+		assertThat(name, is(NAME));
 	}
 
 	@Test
