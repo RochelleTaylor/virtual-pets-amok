@@ -9,8 +9,6 @@ public class VirtualPetShelter {
 	private VirtualPet pet;
 	private Map<String, VirtualPet> petList = new HashMap<String, VirtualPet>();
 	private int cleanliness;
-	private Map<String, VirtualPet> myShelter;
-	private String robotDogStatus;
 	// public boolean getSize;
 	public boolean getAllPets;
 
@@ -23,9 +21,9 @@ public class VirtualPetShelter {
 		petList.put(pet.getPetName(), pet);
 	}
 
-	public void admitVirtualPetByName(String name, String description) {
-		addVirtualPetToPetList((OrganicDog) pet);
-	}
+	// public void admitVirtualPetByName(String name, String description) {
+	// addVirtualPetToPetList(pet);
+	// }
 
 	public VirtualPet getPetByName(String name) {
 		return petList.get(name);
@@ -42,13 +40,17 @@ public class VirtualPetShelter {
 
 	public void feedAllPets() {
 		for (VirtualPet pet : petList.values()) {
-			((Organic) pet).feed();
+			if (pet instanceof Organic) {
+				((Organic) pet).feed();
+			}
 		}
 	}
 
 	public void waterAllPets() {
 		for (VirtualPet pet : petList.values()) {
-			((Organic) pet).water();
+			if (pet instanceof Organic) {
+				((Organic) pet).water();
+			}
 		}
 	}
 
@@ -64,21 +66,34 @@ public class VirtualPetShelter {
 		return result;
 	}
 
+	public String displayPetNameAndDescription() {
+		String pets = "";
+		for (VirtualPet pet : petList.values()) {
+			pets += pet.getPetName() + "\t|" + pet.getPetDescription() + "\n";
+		}
+		return pets;
+	}
+
 	public String displayPets() {
 		String pets = "";
 		for (VirtualPet pet : petList.values()) {
 			if (pet instanceof Organic) {
 				pets += pet.getPetName() + "\t|" + ((Organic) pet).getHunger() + "\t|" + ((Organic) pet).getThirst()
-						+ "\t|" + "\n";
+						+ "\t|" + pet.getHealth() + "\n";
 			}
+
 		}
 		return pets;
 	}
 
-	public String displayPetNameAndDescription() {
+	public String displayRoboticPets() {
 		String pets = "";
 		for (VirtualPet pet : petList.values()) {
-			pets += pet.getPetName() + "\t|" + pet.getPetDescription() + "\n";
+			if (pet instanceof Robotic) {
+				pets += pet.getPetName() + "\t|" + ((Robotic) pet).getPetDescription() + "\t|"
+						+ ((Robotic) pet).getOilLevel() + "\t|" + pet.getHealth() + "\n";
+			}
+
 		}
 		return pets;
 	}
@@ -116,7 +131,20 @@ public class VirtualPetShelter {
 	}
 
 	public void oilAll() {
-		// TODO Auto-generated method stub
+		for (VirtualPet pet : petList.values()) {
+			((Robotic) pet).oil();
+		}
 
 	}
+
+	public String displayPetStatus() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void cleanDogCages() {
+		for (VirtualPet pet : petList.values()) {
+			((OrganicDog) pet).cleanCage();	
+	}
+
 }

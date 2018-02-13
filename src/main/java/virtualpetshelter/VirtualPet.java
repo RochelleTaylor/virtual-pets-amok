@@ -17,6 +17,14 @@ public abstract class VirtualPet {
 
 	}
 
+	public VirtualPet(String name, String description) {
+		boredom = 10;
+		health = 20;
+		this.petName = name;
+		this.petDescription = description;
+
+	}
+
 	public void tick() {
 	}
 

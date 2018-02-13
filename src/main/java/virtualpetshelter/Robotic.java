@@ -18,4 +18,9 @@ public abstract class Robotic extends VirtualPet {
 		health -= 1;
 	}
 
+	public int getOilLevel() {
+		return oil;
+
+	}
+
 }

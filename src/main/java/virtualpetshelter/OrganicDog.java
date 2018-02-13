@@ -6,8 +6,6 @@ public class OrganicDog extends Organic implements Walkable {
 		super(name, description, boredom, health, waste, thirst, hunger);
 	}
 
-	private int walk;
-
 	@Override
 	public void walk() {
 		boredom -= 20;
@@ -24,8 +22,4 @@ public class OrganicDog extends Organic implements Walkable {
 
 	}
 
-	public void addPet(OrganicDog organicDog) {
-		// TODO Auto-generated method stub
-
-	}
 }
