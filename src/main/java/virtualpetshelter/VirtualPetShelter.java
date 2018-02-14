@@ -11,6 +11,7 @@ public class VirtualPetShelter {
 	private int cleanliness;
 	// public boolean getSize;
 	public boolean getAllPets;
+	private String pets;
 
 	public VirtualPetShelter() {
 		addVirtualPetToPetList(new OrganicDog("Bob", " is blue ", 30, 60, 40, 20, 70));
@@ -144,7 +145,13 @@ public class VirtualPetShelter {
 
 	public void cleanDogCages() {
 		for (VirtualPet pet : petList.values()) {
-			((OrganicDog) pet).cleanCage();	
-	}
+			((OrganicDog) pet).cleanCage();
+			if (pet instanceof OrganicDog) {
+				pets += pet.getPetName() + ((OrganicDog) pet).getPetDescription();
+				((Organic) pet).cleanCage();
+				((OrganicDog) pet).getWaste();
+			}
 
+		}
+	}
 }

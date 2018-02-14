@@ -33,10 +33,11 @@ public class VirtualPetShelterApp {
 			System.out.println(myShelter.displayPets());
 			System.out.println(/* Something returning a string that lists pets */);
 			System.out.println("Here is a list of our robotic pets with their status");
+			System.out.println("Name\t:Description    \t:Oil\t:Health\t");
 
-			myShelter.addVirtualPetToPetList(new RobotDog("Milo", "talks!", 40, 30, 20));
-			myShelter.addVirtualPetToPetList(new RobotDog("Sam", "can do math!", 20, 60, 30));
-			myShelter.addVirtualPetToPetList(new RobotCat("Sara", "can change colors", 50, 70, 30));
+			myShelter.addVirtualPetToPetList(new RobotDog("Milo", "talks!               ", 40, 30, 20));
+			myShelter.addVirtualPetToPetList(new RobotDog("Sam", "can do math!          ", 20, 60, 30));
+			myShelter.addVirtualPetToPetList(new RobotCat("Sara", "can change colors    ", 50, 70, 30));
 			myShelter.addVirtualPetToPetList(new RobotCat("Blue", "Doesnt like RobotDogs", 50, 60, 40));
 			System.out.println(myShelter.displayRoboticPets());
 			System.out.println("Now that we know their status, what would you like to do next?");
@@ -89,23 +90,34 @@ public class VirtualPetShelterApp {
 					VirtualPet newPet = new RobotDog(name, description, 30, 50, 40);
 					myShelter.addVirtualPetToPetList(newPet);
 					System.out.println("You've admitted a pet!");
-				}else if(choice.equals("2"))
-				
+				} else if (choice.equals("2")) {
+					VirtualPet newPet = new RobotDog(name, description, 30, 50, 40);
+					myShelter.addVirtualPetToPetList(newPet);
+					System.out.println("You've admitted a pet!");
+				} else if (choice.equals("3")) {
+					VirtualPet newPet = new RobotDog(name, description, 30, 50, 40);
+					myShelter.addVirtualPetToPetList(newPet);
+					System.out.println("You've admitted a pet!");
+				} else if (choice.equals("4")) {
+					VirtualPet newPet = new RobotDog(name, description, 30, 50, 40);
+					myShelter.addVirtualPetToPetList(newPet);
+					System.out.println("You've admitted a pet!");
 
-			} else if (optionEntered.equals("7")) {
-				System.out.println("Time to clean the dog cages!");
-				myShelter.cleanDogCages();
+				} else if (optionEntered.equals("7")) {
+					System.out.println("Time to clean the dog cages!");
+					myShelter.cleanDogCages();
 
-			} else if (optionEntered.equals("8")) {
-				System.out.println("Time to clean the Shelter LitterBox");
-				myShelter.getLitterBoxCleanliness();
+				} else if (optionEntered.equals("8")) {
+					System.out.println("Time to clean the Shelter LitterBox");
+					myShelter.getLitterBoxCleanliness();
+				}
+
+				myShelter.tickAllPets();
+
+				// display the updated stats
+				System.out.println(myShelter.displayPets());
+				System.out.println(myShelter.displayRoboticPets());
 			}
-
-			myShelter.tickAllPets();
-
-			// display the updated stats
-			System.out.println(myShelter.displayPets());
-			System.out.println(myShelter.displayRoboticPets());
 		}
 	}
-}}
+}
